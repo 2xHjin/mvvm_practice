@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--이거 설정하면 드라이브에 데이터가 25mb 만큼 저장되서 복구가 가능함-->
+    <!--제조사별로 그게 가능한지-->
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyShoppi"
+        tools:targetApi="31">
+        <!--다른 구성요소로 이 액티비티를 실행할수 있는지-->
+
+        <activity android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyShoppi.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!--액티비티를 런처 액티비티로 실행하겠다-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+    </application>
+
+</manifest>
